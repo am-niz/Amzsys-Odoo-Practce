@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_academy_student_details,academy.student.details,model_student_model,base.group_user,1,1,1,1
+access_academy_teacher_details,academy.teacher.details,model_teacher_model,base.group_user,1,1,1,1
+access_academy_teacher_schedules,academy.teacher.schedules,model_teaching_schedules_model,base.group_user,1,1,1,1
+access_student_fee_wizard,access.student.fee.wizard,model_student_fee_wizard,base.group_user,1,1,1,1

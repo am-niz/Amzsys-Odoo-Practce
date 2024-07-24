@@ -1,0 +1,32 @@
+<odoo>
+    <record id="teacher_select_id" model="ir.ui.view">
+        <field name="name">teacher.select.id</field>
+        <field name="model">teaching.schedules.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="teacher_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="teacher_schedule_form_id" model="ir.ui.view">
+        <field name="name">teacher.schedule.form.id</field>
+        <field name="model">teaching.schedules.model</field>
+        <field name="arch" type="xml">
+            <form string="Schedules">
+                <group>
+                    <field name="teacher_id"/>
+                    <field name="day"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="teacher_schedule_action" model="ir.actions.act_window">
+        <field name="name">Teaching Schedule</field>
+        <field name="res_model">teaching.schedules.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

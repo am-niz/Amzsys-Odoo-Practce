@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem id="academy_root_menu" name="Academy"/>
+    <menuitem id="academy_sub_root_menu" name="Academy Details" parent="academy_root_menu"/>
+    <menuitem id="student_detail_root" name="Students Details" parent="academy_sub_root_menu" action="student_action"/>
+    <menuitem id="teacher_detail_root" name="Teachers Details" parent="academy_sub_root_menu" action="teacher_action"/>
+    <menuitem id="teacher_schedule_root" name="Teaching Schedule" parent="academy_sub_root_menu" action="teacher_schedule_action"/>
+</odoo>

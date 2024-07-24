@@ -1,0 +1,73 @@
+<odoo>
+
+    <record id="student_tree_id" model="ir.ui.view">
+        <field name="name">student.tree.id</field>
+        <field name="model">student.model</field>
+        <field name="arch" type="xml">
+            <tree>
+<!--                <field name="student_id"/>-->
+                <field name="student_name"/>
+                <field name="student_class"/>
+                <field name="student_roll_number"/>
+                <field name="teacher_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="student_form_id" model="ir.ui.view">
+        <field name="name">student.form.id</field>
+        <field name="model">student.model</field>
+        <field name="arch" type="xml">
+            <form string="Students Details">
+                <header>
+                    <button name="action_view_fee_details" string="View Fee Details" type="object" class="oe_highlight" invisible="student_fee_status == False"/>
+                </header>
+<!--                <sheet>-->
+                    <notebook>
+                        <page string="General Information">
+                            <group>
+<!--                                <field name="student_id" required="1"/>-->
+                                <field name="student_name" required="1"/>
+                                <field name="student_class" required="1"/>
+                                <field name="teacher_id"/>
+                                <field name="student_roll_number"/>
+                                <field name="student_certificate_file" filename="profile" />
+                            </group>
+                        </page>
+                        <page string="Student Bio">
+                            <group>
+                                <field name="student_age"/>
+                                <field name="student_gender"/>
+                                <field name="student_dob"/>
+                                <field name="student_profile_photo" widget="image" class="oe_avatar" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page string="Contact Information">
+                            <group>
+                                <field name="student_address" placeholder="Enter address here"/>
+                                <field name="student_mobile_number" placeholder="98342*****"/>
+                                <field name="student_email"  placeholder="xyz@gmail.com"/>
+                            </group>
+                        </page>
+                        <page string="Fee Information">
+                            <group>
+                                <field name="student_fee"/>
+                                <field name="student_fee_status"/>
+                                <field name="if_paid"/>
+                                <field name="currency_id"/>
+                                <field name="Amount"/>
+                            </group>
+                        </page>
+                    </notebook>
+<!--                </sheet>-->
+            </form>
+        </field>
+    </record>
+
+    <record id="student_action" model="ir.actions.act_window">
+        <field name="name">Student Details</field>
+        <field name="res_model">student.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

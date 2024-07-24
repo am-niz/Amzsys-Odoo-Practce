@@ -1,0 +1,39 @@
+<odoo>
+  <record id="product_discount" model="ir.ui.view">
+    <field name="name">product.discount</field>
+    <field name="model">compute.model</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <button name="find_products_with_discount" string="Same Discount Products" type="object" class="oe_highlight" context="{'discount': product_discount}"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="product_name"/>
+            <field name="product_price"/>
+            <field name="product_discount"/>
+            <field name="product_final_price"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="product_discount_tree" model="ir.ui.view">
+    <field name="name">product.discount.tree</field>
+    <field name="model">compute.model</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="product_name"/>
+        <field name="product_price"/>
+        <field name="product_discount"/>
+        <field name="product_final_price"/>
+      </tree>
+    </field>
+  </record>
+  <record id="action_product_discount" model="ir.actions.act_window">
+    <field name="name">action.product.discount</field>
+    <field name="res_model">compute.model</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <menuitem id="root_product_discount" name="Product Discount" action="action_product_discount"/>
+</odoo>

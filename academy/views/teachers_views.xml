@@ -1,0 +1,61 @@
+<odoo>
+    <record id="teacher_tree_id" model="ir.ui.view">
+        <field name="name">teacher.tree.id</field>
+        <field name="model">teacher.model</field>
+        <field name="arch" type="xml">
+            <tree>
+<!--                <field name="teacher_id"/>-->
+                <field name="teacher_name"/>
+                <field name="teacher_department"/>
+                <field name="teacher_age"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="teacher_form_id" model="ir.ui.view">
+        <field name="name">teacher.form.id</field>
+        <field name="model">teacher.model</field>
+        <field name="arch" type="xml">
+            <form string="Teacher Details">
+                    <notebook>
+                        <page string="General Information">
+                            <group>
+<!--                                <field name="teacher_id" required="1"/>-->
+                                <field name="teacher_name" required="1"/>
+                                <field name="teacher_gender"/>
+                                <field name="teacher_age"/>
+                            </group>
+                        </page>
+                        <page string="Employment Details">
+                            <group>
+                                <field name="teacher_salary"/>
+                                <field name="teacher_joining_date"/>
+                                <field name="teacher_department"/>
+                                <field name="student_list"/>
+                            </group>
+                        </page>
+                        <page string="Teaching Schedule">
+                            <group>
+                                <field name="teacher_schedule_list"/>
+                            </group>
+                        </page>
+                        <page string="Contact Information">
+                            <group>
+                                <field name="teacher_address"/>
+                                <field name="teacher_mobile_number"/>
+                                <field name="teacher_email"/>
+                                <field name="teacher_profile_photo" filename="profile"/>
+                            </group>
+                        </page>
+                    </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="teacher_action" model="ir.actions.act_window">
+        <field name="name">Teacher Details</field>
+        <field name="res_model">teacher.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
